@@ -53,48 +53,30 @@
                                 mapTypeId: google.maps.MapTypeId.HYBRID,
                                 draggable: true,
                               });
-                              var marker1Pos = {lat: <%- item.lat %->, lng: <%- item.lat %->};
+                              var marker1Pos = {lat: <%- item.lat -%>, lng: <%- item.long -%>};
                               var marker = new google.maps.Marker({
                                 position: marker1Pos,
                                 map: map1,
-                                title: '<%- item.site %->'
+                                title: '<%- item.site -%>'
                               });
-                            marker.addListener('click', function() {
-                              var infowindow = new google.maps.InfoWindow({
-                                content: "<%= item.category %>",
-                                maxWidth: 400
+                              marker.addListener('click', function() {
+                                var infowindow = new google.maps.InfoWindow({
+                                  content: "<%= item.category %>",
+                                  maxWidth: 400
+                                });
+                                infowindow.open(map1, marker);
                               });
-                              infowindow.open(map1, marker);
-                            });
-                          };
-                          </script>
-                          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ty6i_atvbwQ3c66H_OpoaXYnBDNPaVc&callback=initMap"
-                          async defer></script>
+                            };
+                            </script>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ty6i_atvbwQ3c66H_OpoaXYnBDNPaVc&callback=initMap"
+                            async defer></script>
+                          </div>
                         </div>
+                        <% } %>
+                        <% } %>
                       </div>
-
-                      <% } %>
-                      <% } %>
                     </div>
-                  </div>
-                  <%  }); %>
-                </div><!-- row -->
-              </div><!-- container -->
-            </article>
-            <!-- <script>
-            // var centerPos = {lat:<%- item.lat %>, lng:<%- item.long %>};
-            function initMap() {
-            var centerPos = {lat:<%- item.lat %>, lng:<%- item.long %>};
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: centerPos,
-            zoom: 18,
-            minZoom: 18,
-            maxZoom: 18,
-            mapTypeId: google.maps.MapTypeId.HYBRID,
-            draggable: true,
-            scrollwheel: false,
-          });
-        }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ty6i_atvbwQ3c66H_OpoaXYnBDNPaVc&callback=initMapSpecial"
-      async defer></script> -->
+                    <%  }); %>
+                  </div><!-- row -->
+                </div><!-- container -->
+              </article>
