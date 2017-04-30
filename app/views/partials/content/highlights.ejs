@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <% highlights.forEach(function(item) { %>
-        <div class="<% if (pageID == 'home') { %>col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center<% } else { %>col-lg-7 col-md-6 col-sm-6<% } %>">
+        <div class="<% if (pageID == 'home') { %>col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center<% } else { %>col-lg-10 col-md-10 col-sm-10<% } %>">
           <h3 class="highlightslist-title"><%= item.site %></h3>
           <h5 class="highlightslist-name">with<a href="/highlights/<%= item.id %>"></a></h5>
           <div class="highlightslist-info">
@@ -15,10 +15,10 @@
                 <% if (pageID == 'highlightsList') { %>
                   <div class="container" style="width:850px;">
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-6 col-sm-12 col-xs-12">
                         <img class="highlightslist-img img-circle pull-left" src="<%= item.image %>" alt="Photo of <%= item.site %>" width="400px" height="300px"></a>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 col-sm-12 col-xs-12" >
                         <iframe width="400" height="300" src="<%= item.videoEmbed %>"></iframe>
                       </div>
                     </div>
